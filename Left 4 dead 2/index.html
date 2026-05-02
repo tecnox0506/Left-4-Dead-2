@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inicio</title>
+    <style>
+        /* CONFIGURACIÓN GENERAL Y FONDO */
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', sans-serif;
+            color: white;
+            background-image: url('img/2.png'); 
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            background-repeat: no-repeat;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        /* NAVEGACIÓN BASE */
+        nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex; 
+            background-color: rgba(255, 0, 0, 0.9);
+            align-items: center;
+            flex-wrap: wrap; /* Permite que los elementos bajen si no hay espacio */
+        }
+
+        nav li a {
+            display: block;
+            color: white;
+            text-decoration: none;
+            padding: 15px 20px;
+            font-weight: bold;
+        }
+
+        nav li a:hover {
+            background-color: yellow;
+            color: black;
+        }
+
+        .nav-logo-right {
+            margin-left: auto;
+            padding: 10px 20px;
+            display: flex;
+            align-items: center;
+        }
+
+        .nav-logo-right img {
+            height: 40px;
+            width: auto;
+            max-width: 100%; /* Evita que el logo se salga */
+            display: block;
+        }
+
+        /* CONTENIDO PRINCIPAL */
+        .main-container {
+            display: flex;
+            gap: 20px;
+            padding: 20px;
+            flex-wrap: wrap;
+            flex: 1;
+        }
+
+        .info-box, .image-box {
+            flex: 1;
+            min-width: 300px;
+            background-color: rgba(0, 0, 0, 0.7);
+            padding: 25px;
+            border-radius: 30px;
+            border: 2px solid red;
+            backdrop-filter: blur(5px);
+            box-sizing: border-box; /* Asegura que el padding no agrande la caja */
+        }
+
+        .image-box {
+            padding: 0;
+            overflow: hidden;
+            display: flex;
+        }
+
+        .image-box img {
+            width: 100%;
+            height: auto;
+            object-fit: cover;
+        }
+
+        /* FOOTER */
+        footer {
+            background-color: rgba(255, 0, 0, 0.9);
+            padding: 20px;
+            text-align: center;
+            border-top: 2px solid yellow;
+            width: 100%;
+            box-sizing: border-box;
+        }
+
+        /* ----- SECCIÓN RESPONSIVE (MÓVILES) ----- */
+        @media (max-width: 768px) {
+            nav ul {
+                flex-direction: column; /* Menú en lista vertical */
+                align-items: center;
+            }
+
+            .nav-logo-right {
+                margin-left: 0; /* Quita el empuje a la derecha en móvil */
+                order: -1; /* Pone el logo arriba del menú en móviles */
+                width: 100%;
+                justify-content: center;
+                background-color: rgba(200, 0, 0, 1); /* Color sólido para destacar el logo */
+            }
+
+            nav li {
+                width: 100%;
+                text-align: center;
+            }
+
+            .main-container {
+                padding: 10px;
+            }
+
+            .info-box, .image-box {
+                min-width: 100%; /* Las cajas ocupan todo el ancho en móviles */
+            }
+            
+            footer {
+                font-size: 0.8em;
+                padding: 15px;
+            }
+        }
+        .h2_1{
+            color: red;
+            text-align: center;
+        }
+        .p{
+            text-align: justify;
+            font-weight: bold;
+            
+        }
+        .p1{
+            text-align: justify;
+            font-weight: bold;
+        }
+        .a1{
+            color: red;
+        }
+        .a2{
+            color: red;
+        }
+        .a3{
+            color: red;
+        }
+        .a4{
+            color: red;
+        }
+        .a5{
+            color: red;
+        }
+    </style>
+</head>
+<body>
+
+    <nav class="navbar">
+        <ul>
+            <li><a href="index.html">Inicio</a></li>
+            <li><a href="h.html">Historia</a></li>
+            <li><a href="p.html">Personajes</a></li>
+            <li><a href="pa.html">Página de Mods</a></li>
+            <li class="nav-logo-right">
+                <img src="img/1.png" alt="Logo">
+            </li>
+        </ul>
+    </nav>
+
+    <main class="main-container">
+        <section class="info-box">
+            <h2 class="h2_1">Left 4 Dead 2</h2>
+            <p class="p">Left 4 Dead 2 (L4D2) es un videojuego de disparos en primera persona (FPS) de temática de terror y supervivencia, desarrollado por Valve Corporation. Lanzado en 2009, no es solo una secuela, sino el estándar de oro del género cooperativo.</p>
+            <p class="p1">A diferencia de otros juegos donde los jugadores simplemente comparten un mapa, en L4D2 la cooperación es una mecánica de supervivencia obligatoria. El juego está diseñado para que un jugador, por muy habilidoso que sea, no pueda sobrevivir solo. 
+Incapacitación total: Ciertos enemigos (Infectados Especiales) pueden atrapar a un personaje de forma que este queda totalmente indefenso. La única forma de liberarse es que un compañero intervenga.
+Gestión de recursos: Los botiquines, analgésicos y munición son limitados. El éxito depende de decidir quién necesita curarse más o quién debe llevar el arma pesada. </p>
+<p class="p1">¡Descargue el juego!</p>
+<a href="https://www.mediafire.com/file/ulhwb0ovyymbfkh/L23ft4D3224d2-23.02.2022.zonaleros.part1.rar/file" class="a1">Parte 1</a>
+<a href="https://www.mediafire.com/file/oma45kx88dvkebr/L23ft4D3224d2-23.02.2022.zonaleros.part2.rar/file" class="a2">Parte 2</a>
+<a href="https://www.mediafire.com/file/erpn54fxt1sjday/L23ft4D3224d2-23.02.2022.zonaleros.part3.rar/file" class="a3">Parte 3</a>
+<a href="https://www.mediafire.com/file/sh42691n0x643ag/L23ft4D3224d2-23.02.2022.zonaleros.part4.rar/file" class="a4">Parte 4</a>
+<a href="https://www.mediafire.com/file/evw7r3zm9su5sbt/L23ft4D3224d2-23.02.2022.zonaleros.part5.rar/file" class="a5">Parte 5</a>
+<p class="p1">Contraseña: zonaleros</p>
+<img src="img/1.jpg" alt="imagen" style="display: block; margin-left: auto; margin-right: auto; margin-top: 50px; width: 20rem; ">
+        </section>
+
+        <section class="image-box">
+            <img src="img/3.png" alt="Tecnología">
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <p>&copy; Copyright - 2026</p>
+           
+        </div>
+    </footer>
+
+</body>
+</html>
