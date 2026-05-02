@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Historia de Nick - L4D2</title>
+    <style>
+        /* CONFIGURACIÓN GENERAL */
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            color: white;
+            background-image: url('img/2.png'); 
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        /* NAVEGACIÓN BASE */
+        nav {
+            background-color: rgba(255, 0, 0, 0.9);
+            border-bottom: 2px solid yellow;
+            z-index: 1000;
+        }
+
+        nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex; 
+            align-items: center;
+        }
+
+        nav li a {
+            display: block;
+            color: white;
+            text-decoration: none;
+            padding: 15px 20px;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        nav li a:hover {
+            background-color: yellow;
+            color: black;
+        }
+
+        .nav-logo-right {
+            margin-left: auto;
+            padding: 10px 20px;
+        }
+
+        .nav-logo-right img {
+            height: 40px;
+            display: block;
+        }
+
+        /* CONTENEDOR DE DOS COLUMNAS */
+        .main-container {
+            display: flex;
+            gap: 30px;
+            padding: 40px 20px;
+            flex: 1;
+            align-items: flex-start;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        /* SECCIÓN IZQUIERDA: HISTORIA */
+        .historia-box {
+            flex: 2;
+            background-color: rgba(0, 0, 0, 0.8);
+            padding: 40px;
+            border-radius: 30px;
+            border: 2px solid red;
+            backdrop-filter: blur(10px);
+            box-shadow: 0 0 15px rgba(255, 0, 0, 0.3);
+        }
+
+        .historia-box h1 {
+            color: yellow;
+            font-size: 2.5em;
+            margin-top: 0;
+            border-bottom: 2px solid red;
+            display: inline-block;
+            padding-bottom: 5px;
+            text-transform: uppercase;
+        }
+
+        .historia-box p {
+            font-size: 1.1em;
+            line-height: 1.6;
+            text-align: justify;
+            font-weight: bold;
+        }
+
+        /* SECCIÓN DERECHA: IMAGEN */
+        .personaje-perfil {
+            flex: 1;
+            background-color: rgba(0, 0, 0, 0.7);
+            border-radius: 30px;
+            border: 2px solid yellow;
+            overflow: hidden;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: sticky;
+            top: 20px;
+        }
+
+        .personaje-perfil img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        /* BOTÓN VOLVER */
+        .btn-volver {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 12px 25px;
+            background-color: red;
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            border-radius: 10px;
+            transition: 0.3s;
+            border: 2px solid transparent;
+        }
+
+        .btn-volver:hover {
+            background-color: yellow;
+            color: black;
+            border-color: red;
+        }
+
+        /* FOOTER */
+        footer {
+            background-color: rgba(0, 0, 0, 0.9);
+            color: white;
+            padding: 20px;
+            text-align: center;
+            border-top: 2px solid red;
+            width: 100%;
+            box-sizing: border-box;
+        }
+
+        /* ----- SECCIÓN RESPONSIVE ----- */
+        @media (max-width: 768px) {
+            nav ul {
+                flex-direction: column;
+                align-items: stretch;
+            }
+
+            .nav-logo-right {
+                margin-left: 0;
+                order: -1; 
+                justify-content: center;
+                display: flex;
+                background-color: rgba(150, 0, 0, 0.5);
+                padding: 15px;
+            }
+
+            nav li {
+                text-align: center;
+            }
+
+            nav li a {
+                border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            }
+
+            .main-container {
+                flex-direction: column;
+                padding: 20px 15px;
+                align-items: center;
+            }
+
+            .personaje-perfil {
+                order: -1; 
+                width: 100%;
+                max-width: 350px;
+                position: static;
+                margin-bottom: 20px;
+            }
+
+            .historia-box {
+                width: 100%;
+                padding: 25px;
+                box-sizing: border-box;
+            }
+
+            .historia-box h1 {
+                font-size: 2em;
+                display: block;
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <ul>
+            <li><a href="index.html">Inicio</a></li>
+            <li><a href="h.html">Historia</a></li>
+            <li><a href="p.html">Personajes</a></li>
+            <li><a href="pa.html">Página de Mods</a></li>
+            <li class="nav-logo-right">
+                <img src="img/1.png" alt="Logo">
+            </li>
+        </ul>
+    </nav>
+
+    <main class="main-container">
+        <!-- COLUMNA IZQUIERDA -->
+        <section class="historia-box">
+            <h1>Nick</h1>
+            <p>Nick es un apostador y estafador profesional de 35 años que se encontraba en Savannah buscando una oportunidad cuando estalló la infección. Vestido con un traje blanco caro que intenta mantener limpio a toda costa, es el miembro más escéptico y sarcástico del grupo.</p>
+            
+            <p>Al principio, Nick no tiene intención de hacer amigos; ve a los demás supervivientes simplemente como un medio para escapar con vida. Su vida antes del apocalipsis consistía en ir de ciudad en ciudad, viviendo de su ingenio y de las debilidades ajenas, lo que lo convirtió en un hombre solitario y desconfiado.</p>
+            
+            <p>Sin embargo, a medida que atraviesan los peligros del Sur, Nick comienza a bajar la guardia. Aunque sus bromas suelen ser hirientes (especialmente hacia Ellis), desarrolla un respeto mutuo con Coach y demuestra que, bajo su fachada de tipo duro y egoísta, está dispuesto a jugarse el pellejo por el equipo cuando las probabilidades están en su contra.</p>
+            
+            <a href="p.html" class="btn-volver">← Volver a Personajes</a>
+        </section>
+
+        <!-- COLUMNA DERECHA -->
+        <section class="personaje-perfil">
+            <img src="img/6.png" alt="Nick">
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; Copyright - 2026 | Tecnoxlight</p>
+    </footer>
+
+</body>
+</html>

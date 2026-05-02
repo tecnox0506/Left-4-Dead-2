@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Página de Mods - L4D2</title>
+    <style>
+        /* CONFIGURACIÓN GENERAL */
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            color: white;
+            background-image: url('img/2.png'); 
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        /* NAVEGACIÓN */
+        nav {
+            background-color: rgba(255, 0, 0, 0.9);
+            border-bottom: 2px solid yellow;
+            z-index: 1000;
+        }
+
+        nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex; 
+            align-items: center;
+        }
+
+        nav li a {
+            display: block;
+            color: white;
+            text-decoration: none;
+            padding: 15px 20px;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        nav li a:hover {
+            background-color: yellow;
+            color: black;
+        }
+
+        .nav-logo-right {
+            margin-left: auto;
+            padding: 10px 20px;
+        }
+
+        .nav-logo-right img {
+            height: 40px;
+            display: block;
+        }
+
+        /* CONTENEDOR PRINCIPAL: 50% / 50% */
+        .main-container {
+            display: flex;
+            gap: 25px;
+            padding: 40px 20px;
+            flex: 1;
+            align-items: flex-start;
+            max-width: 1200px;
+            margin: 0 auto;
+            width: 100%;
+            box-sizing: border-box;
+        }
+
+        /* COLUMNA IZQUIERDA */
+        .info-box {
+            flex: 1;
+            background-color: rgba(0, 0, 0, 0.8);
+            padding: 35px;
+            border-radius: 30px;
+            border: 2px solid red;
+            backdrop-filter: blur(10px);
+            box-sizing: border-box;
+        }
+
+        .titulo-centrado {
+            text-align: center;
+            color: yellow;
+            border-bottom: 2px solid red;
+            margin-bottom: 25px;
+            padding-bottom: 10px;
+            text-transform: uppercase;
+            font-size: 2em;
+        }
+
+        .h2_1 {
+            color: yellow;
+            font-size: 1.4em;
+            margin-bottom: 8px;
+            text-transform: uppercase;
+        }
+
+        .p {
+            text-align: justify;
+            font-weight: bold;
+            line-height: 1.5;
+            margin-bottom: 20px;
+        }
+
+        /* COLUMNA DERECHA */
+        .image-box {
+            flex: 1;
+            display: grid;
+            grid-template-columns: 1fr 1fr; 
+            gap: 15px;
+            padding: 25px;
+            background-color: rgba(0, 0, 0, 0.7);
+            border-radius: 30px;
+            border: 2px solid yellow;
+            box-sizing: border-box;
+            position: sticky;
+            top: 20px;
+        }
+
+        /* TARJETAS DE MODS */
+        .mod-link-card {
+            text-decoration: none;
+            position: relative;
+            height: 180px;
+            border-radius: 15px;
+            overflow: hidden;
+            border: 2px solid #444;
+            transition: 0.3s;
+        }
+
+        .mod-link-card img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            filter: brightness(0.4);
+            transition: 0.3s;
+        }
+
+        .mod-link-card:hover {
+            border-color: yellow;
+            transform: translateY(-5px);
+        }
+
+        .mod-link-card:hover img {
+            filter: brightness(0.8);
+        }
+
+        .btn-label {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: rgba(255, 0, 0, 0.9);
+            padding: 10px;
+            color: white;
+            font-weight: bold;
+            border-radius: 5px;
+            text-transform: uppercase;
+            font-size: 0.8em;
+            text-align: center;
+            width: 85%;
+        }
+
+        /* FOOTER */
+        footer {
+            background-color: rgba(0, 0, 0, 0.9);
+            color: white;
+            padding: 20px;
+            text-align: center;
+            border-top: 2px solid red;
+        }
+
+        /* ----- RESPONSIVE CON CENTRADO DE TEXTO EN NAV ----- */
+        @media (max-width: 900px) {
+            nav ul {
+                flex-direction: column;
+                align-items: stretch; /* Estira los elementos al ancho total */
+            }
+
+            nav li a {
+                text-align: center; /* Centra el texto de las pestañas en móvil */
+                border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            }
+
+            .nav-logo-right {
+                margin-left: 0;
+                order: -1;
+                display: flex;
+                justify-content: center;
+                background-color: rgba(150, 0, 0, 0.5);
+                padding: 15px;
+            }
+
+            .main-container {
+                flex-direction: column;
+                padding: 20px;
+            }
+
+            .info-box, .image-box {
+                flex: none;
+                width: 100%;
+            }
+
+            .image-box {
+                order: -1; 
+                position: static;
+                grid-template-columns: 1fr 1fr; 
+            }
+        }
+
+        @media (max-width: 500px) {
+            .image-box {
+                grid-template-columns: 1fr; 
+            }
+            
+            .titulo-centrado {
+                font-size: 1.5em;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <ul>
+            <li><a href="index.html">Inicio</a></li>
+            <li><a href="h.html">Historia</a></li>
+            <li><a href="p.html">Personajes</a></li>
+            <li><a href="pa.html">Página de Mods</a></li>
+            <li class="nav-logo-right">
+                <img src="img/1.png" alt="Logo">
+            </li>
+        </ul>
+    </nav>
+
+    <main class="main-container">
+        <!-- COLUMNA IZQUIERDA -->
+        <section class="info-box">
+            <h1 class="titulo-centrado">Plataformas de Mods</h1>
+            
+            <p class="p">Explora los mejores sitios para personalizar tu experiencia en Left 4 Dead 2:</p>
+            
+            <h2 class="h2_1">Steam Workshop</h2>
+            <p class="p">Instalación con un solo clic. La forma más segura y rápida de obtener skins y armas.</p>
+            
+            <h2 class="h2_1">GameMaps</h2>
+            <p class="p">El cuartel general de las campañas personalizadas. Ideal para jugar mapas creados por la comunidad.</p>
+            
+            <h2 class="h2_1">Nexus Mods</h2>
+            <p class="p">Encuentra mejoras visuales avanzadas y paquetes de texturas en alta resolución.</p>
+            
+            <h2 class="h2_1">ModDB</h2>
+            <p class="p">Proyectos masivos y transformaciones totales que cambian las reglas del juego.</p>
+        </section>
+
+        <!-- COLUMNA DERECHA -->
+        <section class="image-box">
+            <a href="https://steamcommunity.com/app/550/workshop/" target="_blank" class="mod-link-card">
+                <img src="img/4.jpg" alt="Steam Workshop">
+                <div class="btn-label">Steam Workshop</div>
+            </a>
+
+            <a href="https://gamemaps.com" target="_blank" class="mod-link-card">
+                <img src="img/10.png" alt="GameMaps">
+                <div class="btn-label">GameMaps</div>
+            </a>
+
+            <a href="https://moddb.com" target="_blank" class="mod-link-card">
+                <img src="img/9.png" alt="ModDB">
+                <div class="btn-label">ModDB</div>
+            </a>
+
+            <a href="https://nexusmods.com" target="_blank" class="mod-link-card">
+                <img src="img/8.png" alt="Nexus Mods">
+                <div class="btn-label">Nexus Mods</div>
+            </a>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; Copyright - 2026 | Tecnoxlight</p>
+    </footer>
+
+</body>
+</html>
