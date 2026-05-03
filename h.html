@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Historia - L4D2</title>
+    <style>
+        /* CONFIGURACIÓN GENERAL Y FONDO */
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            color: white;
+            background-image: url('img/2.png'); 
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            background-repeat: no-repeat;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        /* NAVEGACIÓN BASE (IGUAL QUE EL INDEX) */
+        nav {
+            background-color: rgba(255, 0, 0, 0.9);
+            border-bottom: 2px solid yellow;
+            z-index: 1000;
+            position: relative;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 20px;
+        }
+
+        /* LOGO IZQUIERDA (Tecnoxlight) */
+        .nav-logo-left img {
+            height: 40px;
+            width: auto;
+            display: block;
+        }
+
+        /* LOGO DERECHA (L4D2) */
+        .nav-logo-right img {
+            height: 40px;
+            width: auto;
+            display: block;
+        }
+
+        /* Botón de Menú Hamburguesa */
+        .menu-toggle {
+            display: none;
+            background-color: transparent;
+            color: white;
+            border: none;
+            padding: 15px 20px;
+            font-weight: bold;
+            font-size: 1.1em;
+            cursor: pointer;
+            text-transform: uppercase;
+            transition: 0.3s;
+        }
+
+        .menu-toggle:hover {
+            background-color: rgba(0, 0, 0, 0.2);
+        }
+
+        nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex; 
+            align-items: center;
+        }
+
+        nav li a {
+            display: block;
+            color: white;
+            text-decoration: none;
+            padding: 15px 20px;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        nav li a:hover {
+            background-color: yellow;
+            color: black;
+        }
+
+        /* CONTENIDO PRINCIPAL */
+        .main-container {
+            display: flex;
+            gap: 20px;
+            padding: 40px 20px;
+            flex-wrap: wrap;
+            flex: 1;
+            justify-content: center;
+        }
+
+        .info-box, .image-box {
+            flex: 1;
+            min-width: 320px;
+            max-width: 650px;
+            background-color: rgba(0, 0, 0, 0.8);
+            padding: 30px;
+            border-radius: 30px;
+            border: 2px solid red;
+            backdrop-filter: blur(8px);
+            box-sizing: border-box;
+        }
+
+        .image-box {
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+        }
+
+        .image-box img {
+            width: 100%;
+            height: auto;
+            border-radius: 15px;
+            border: 1px solid rgba(255, 0, 0, 0.5);
+        }
+
+        /* ESTILOS DE TEXTO */
+        .h2_1 {
+            color: #ff0000;
+            text-align: center;
+            text-transform: uppercase;
+            margin-top: 10px;
+        }
+
+        .p, .p1, ol li {
+            text-align: justify;
+            font-weight: bold;
+            line-height: 1.6;
+            margin-bottom: 15px;
+        }
+
+        ol {
+            padding-left: 20px;
+        }
+
+        /* FOOTER */
+        footer {
+            background-color: rgba(0, 0, 0, 0.9);
+            padding: 20px;
+            text-align: center;
+            border-top: 2px solid red;
+            width: 100%;
+            box-sizing: border-box;
+        }
+
+        /* ----- SECCIÓN RESPONSIVE (MÓVILES) ----- */
+        @media (max-width: 990px) {
+            nav {
+                flex-direction: column;
+                padding: 0;
+            }
+
+            .nav-logo-left, .nav-logo-right {
+                display: none;
+            }
+
+            .menu-toggle {
+                display: block; 
+                width: 100%;
+            }
+
+            nav ul {
+                display: none;
+                flex-direction: column; 
+                align-items: stretch;
+                width: 100%;
+                background-color: rgba(180, 0, 0, 1);
+            }
+
+            nav ul.show {
+                display: flex;
+            }
+
+            nav li {
+                text-align: center;
+            }
+
+            .info-box, .image-box {
+                min-width: 100%;
+                max-width: 100%;
+            }
+
+            .image-box {
+                order: 2;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <!-- Logo Tecnoxlight a la Izquierda -->
+        <div class="nav-logo-left">
+            <img src="img/1.png" alt="Tecnoxlight">
+        </div>
+
+        <button class="menu-toggle" id="menu-btn">☰ Menú ▼</button>
+
+        <ul id="nav-menu">
+            <li><a href="index.html">Inicio</a></li>
+            <li><a href="h.html">Historia</a></li>
+            <li><a href="p.html">Personajes</a></li>
+            <li><a href="pa.html">Página de Mods</a></li>
+        </ul>
+
+        <!-- Logo L4D2 a la Derecha -->
+        <div class="nav-logo-right">
+            <img src="img/1.jpg" alt="Logo">
+        </div>
+    </nav>
+
+    <main class="main-container">
+        <section class="info-box">
+            <h2 class="h2_1">Historia</h2>
+            <p class="p">La historia de Left 4 Dead 2 se desarrolla aproximadamente tres semanas después del primer brote de un patógeno altamente contagioso conocido como la "Gripe Verde". A diferencia de los zombis tradicionales, estos infectados no están muertos, sino que sufren una forma extrema de rabia mutante que los vuelve hiperagresivos.</p>
+            <p class="p">La trama sigue a cuatro nuevos supervivientes que se encuentran por primera vez en un hotel de Savannah, Georgia, justo cuando los últimos helicópteros de rescate abandonan la ciudad.</p>
+            
+            <h2 class="h2_1">Protagonistas</h2>
+            <p class="p1">El grupo es una mezcla improbable de personas que resultaron ser "Portadores" (infectados asintomáticos que pueden propagar el virus sin enfermarse):</p>
+            <ol>
+                <li><strong>Coach:</strong> Un antiguo entrenador de fútbol americano de instituto.</li>
+                <li><strong>Ellis:</strong> Un joven mecánico entusiasta y parlanchín de Savannah.</li>
+                <li><strong>Nick:</strong> Un cínico apostador y estafador de traje blanco.</li>
+                <li><strong>Rochelle:</strong> Una productora asociada de una cadena de televisión local.</li>
+            </ol>
+            <img src="img/3.jpg" alt="Protagonistas" style="display: block; margin: 30px auto 0; width: 200px; border-radius: 10px; border: 2px solid red;">
+        </section>
+
+        <section class="image-box">
+            <img src="img/2.jpg" alt="Arte del Juego">
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; Copyright - 2026 | Tecnoxlight</p>
+    </footer>
+
+    <script>
+        const menuBtn = document.getElementById('menu-btn');
+        const navMenu = document.getElementById('nav-menu');
+
+        menuBtn.addEventListener('click', () => {
+            navMenu.classList.toggle('show');
+            if (navMenu.classList.contains('show')) {
+                menuBtn.innerHTML = '✖ Cerrar ▲';
+            } else {
+                menuBtn.innerHTML = '☰ Menú ▼';
+            }
+        });
+    </script>
+
+</body>
+</html>
